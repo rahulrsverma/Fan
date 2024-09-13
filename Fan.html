@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Animation</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        img {
+            border: 20px solid aqua;
+            padding: 50px;
+            border-radius: 50%;
+            animation: fananim linear infinite;
+            width: 200px;
+            height: 200px;
+        }
+
+        @keyframes fananim {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        button {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            padding: 20px 30px;
+            font-size: 25px;
+            font-weight: 550;
+            border: none;
+            background-color: silver;
+            border-radius: 50%;
+            transition: 0.15s;
+        }
+
+        button:active {
+            box-shadow: 0px 10px 10px black;
+            transform: scale(0.95);
+        }
+
+        .main button:nth-child(3) {
+            background-color: rgb(0, 255, 0);
+        }
+
+        .main button:nth-child(4) {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <img id="img" src="Fan.png" alt="Fan Image">
+        <button onclick="myfunon()">ON</button>
+        <button onclick="myfunoff()">OFF</button>
+        <button onclick="myfun1()">1</button>
+        <button onclick="myfun2()">2</button>
+        <button onclick="myfun3()">3</button>
+    </div>
+
+    <script>
+        let a = document.getElementById("img");
+
+        function myfunon() {
+            a.style.animationDuration = "3s";
+        }
+
+        function myfunoff() {
+            a.style.animationDuration = "0s";
+        }
+
+        function myfun1() {
+            a.style.animationDuration = "1s";
+        }
+
+        function myfun2() {
+            a.style.animationDuration = "0.5s";
+        }
+
+        function myfun3() {
+            a.style.animationDuration = "0.1s";
+        }
+    </script>
+
+</body>
+</html>
